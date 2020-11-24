@@ -52,8 +52,7 @@ app.get("/posts", (req, res) => {
 });
 
 app.get("/*", (req, res) => {
-	console.log(req);
-	res.sendFile(path.join(__dirname, "./client/build", "index1.html"));
+	res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
