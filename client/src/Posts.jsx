@@ -10,7 +10,6 @@ function Posts() {
 			.get("/posts")
 			.then((result) => {
 				setPosts(result.data);
-				console.log(result.data);
 			})
 			.catch((error) => {
 				console.log(error);
