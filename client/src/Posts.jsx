@@ -22,13 +22,20 @@ function Posts() {
 			<div className="row">
 				{posts.map((post) => {
 					return (
-						<div className="col-sm-3" key={post._id}>
-							<h6>{post.title}</h6>
-							<p>{post.description}</p>
+						<div className="col-sm-3 m-2" key={post._id}>
+							<div className="card" style={{ width: "18rem" }}>
+								<div className="card-body">
+									<h5 className="card-title">{post.title.substring(0, 10)}</h5>
 
-							<Link className="nav-link active" to={`/post/${post._id}`}>
-								Read More
-							</Link>
+									<p className="card-text">
+										{post.description.substring(0, 20)}
+									</p>
+
+									<Link className="nav-link active" to={`/post/${post._id}`}>
+										Read More
+									</Link>
+								</div>
+							</div>
 						</div>
 					);
 				})}
