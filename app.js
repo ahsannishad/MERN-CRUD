@@ -55,6 +55,16 @@ app.get("/api/readposts", (req, res) => {
 	});
 });
 
+app.get("/api/post/:id", (req, res) => {
+	Posts.find({ id: req.params.id }, (error, post) => {
+		if (error) {
+			res.json(error.message);
+		} else {
+			res.json(post);
+		}
+	});
+});
+
 // Production
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
