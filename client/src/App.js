@@ -6,6 +6,7 @@ import Post from "./Post";
 import Header from "./Header";
 import Compose from "./Compose";
 import NotFound from "./NotFound";
+import ReadPosts from "./ReadPosts";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/posts" component={Posts} />
+					<Route exact path="/readposts" component={ReadPosts} />
 					<Route exact path="/post/:id" component={Post} />
 					<Route path="/compose" exact>
 						<Compose />

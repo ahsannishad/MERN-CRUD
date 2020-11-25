@@ -8,6 +8,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/posts", require("./routes/route"));
+app.use("/api/readpost", require("./routes/route"));
 
 // Production
 if (process.env.NODE_ENV === "production") {
