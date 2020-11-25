@@ -10,7 +10,7 @@ function Post() {
 		axios
 			.get(`/api/post/${id}`)
 			.then((res) => {
-				setPostData(res.data);
+				setPostData(res.data[0]);
 			})
 			.catch((error) => {
 				console.log(error);

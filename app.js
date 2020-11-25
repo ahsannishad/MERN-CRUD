@@ -56,7 +56,7 @@ app.get("/api/readposts", (req, res) => {
 });
 
 app.get("/api/post/:id", (req, res) => {
-	Posts.find({ id: req.params.id }, (error, post) => {
+	Posts.find({ _id: req.params.id }, (error, post) => {
 		if (error) {
 			res.json(error.message);
 		} else {

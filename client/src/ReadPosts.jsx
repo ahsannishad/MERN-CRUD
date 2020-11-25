@@ -30,7 +30,7 @@ function ReadPosts() {
 										{post.description.substring(0, 20)}
 									</p>
 
-									<Link className="nav-link active" to={`/post/${post._id}`}>
+									<Link className="nav-link active" to={`post/${post._id}`}>
 										Read More
 									</Link>
 								</div>
