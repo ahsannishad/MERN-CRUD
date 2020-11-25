@@ -14,6 +14,8 @@ function Compose() {
 					Axios.post("/api/compose", { title, description })
 						.then((res) => {
 							console.log("Post recorded");
+							setTitle("");
+							setDescription("");
 						})
 						.catch((error) => {
 							console.log(error);

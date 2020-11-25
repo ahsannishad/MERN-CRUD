@@ -65,6 +65,21 @@ app.get("/api/post/:id", (req, res) => {
 	});
 });
 
+app.post("/api/compose", (req, res) => {
+	const post = new Posts({
+		titile: req.body.title,
+		description: req.body.description,
+	});
+
+	post.save((error, success) => {
+		if (error) {
+			res.status(500).send("Internal Server error, Plase try later");
+		} else {
+			res.send("Post saved successfully");
+		}
+	});
+});
+
 // Production
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
