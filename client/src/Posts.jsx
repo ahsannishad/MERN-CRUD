@@ -10,6 +10,7 @@ function Posts() {
 			.get("/api/posts")
 			.then((result) => {
 				setPosts(result.data);
+				console.log(result.data);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -24,11 +25,9 @@ function Posts() {
 						<div className="col-sm-3 m-2" key={post._id}>
 							<div className="card" style={{ width: "18rem" }}>
 								<div className="card-body">
-									<h5 className="card-title">{post.title.substring(0, 10)}</h5>
+									<h5 className="card-title">{post.title}</h5>
 
-									<p className="card-text">
-										{post.description.substring(0, 20)}
-									</p>
+									<p className="card-text">{post.description}</p>
 
 									<Link className="nav-link active" to={`/post/${post._id}`}>
 										Read More

@@ -11,6 +11,7 @@ function Post() {
 			.get(`/api/post/${id}`)
 			.then((res) => {
 				setPostData(res.data[0]);
+				console.log(res.data[0]);
 			})
 			.catch((error) => {
 				console.log(error);

@@ -27,6 +27,7 @@ function Compose() {
 						type="text"
 						className="from-control"
 						placeholder="Title"
+						value={title}
 						onChange={(event) => {
 							setTitle(event.target.value);
 						}}
@@ -34,6 +35,7 @@ function Compose() {
 					<input
 						type="text"
 						className="from-control"
+						value={description}
 						placeholder="description"
 						onChange={(event) => {
 							setDescription(event.target.value);

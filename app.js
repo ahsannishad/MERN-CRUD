@@ -45,16 +45,6 @@ app.get("/api/posts", (req, res) => {
 	});
 });
 
-app.get("/api/readposts", (req, res) => {
-	Posts.find({}, (error, post) => {
-		if (error) {
-			res.json(error.message);
-		} else {
-			res.json(post);
-		}
-	});
-});
-
 app.get("/api/post/:id", (req, res) => {
 	Posts.find({ _id: req.params.id }, (error, post) => {
 		if (error) {
@@ -66,18 +56,30 @@ app.get("/api/post/:id", (req, res) => {
 });
 
 app.post("/api/compose", (req, res) => {
+	console.log(req.body.title, req.body.description);
 	const post = new Posts({
-		titile: req.body.title,
+		title: req.body.title,
 		description: req.body.description,
 	});
 
-	post.save((error, success) => {
-		if (error) {
-			res.status(500).send("Internal Server error, Plase try later");
-		} else {
-			res.send("Post saved successfully");
-		}
-	});
+	post
+		.save()
+		.then((success) => {
+			res.send("successfully post saved");
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+});
+
+app.delete("/api/deleteall", (req, res) => {
+	[
+		Posts.deleteMany({}, (error, success) => {
+			if (!error) {
+				[res.send("All posts deleted successfully")];
+			}
+		}),
+	];
 });
 
 // Production
