@@ -82,7 +82,8 @@ app.delete("/api/deleteall", (req, res) => {
 	];
 });
 
-// Production
+// Production setup
+
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
 
