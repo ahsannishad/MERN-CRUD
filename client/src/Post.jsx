@@ -8,7 +8,7 @@ function Post() {
 
 	useEffect(() => {
 		axios
-			.get(`/post/${id}`)
+			.get(`/api/post/${id}`)
 			.then((res) => {
 				setPostData(res.data);
 			})

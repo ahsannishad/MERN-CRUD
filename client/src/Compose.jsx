@@ -11,7 +11,7 @@ function Compose() {
 				onSubmit={(event) => {
 					event.preventDefault();
 
-					Axios.post("/compose", { title, description })
+					Axios.post("/api/compose", { title, description })
 						.then((res) => {
 							console.log("Post recorded");
 						})

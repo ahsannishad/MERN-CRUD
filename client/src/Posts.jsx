@@ -7,7 +7,7 @@ function Posts() {
 
 	useEffect(() => {
 		axios
-			.get("/posts")
+			.get("/api/posts")
 			.then((result) => {
 				setPosts(result.data);
 			})
